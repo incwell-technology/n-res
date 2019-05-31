@@ -1,5 +1,5 @@
 const mongoose = require('mongoose') 
-var schema = mongoose.Schema({
+const schema = mongoose.Schema({
     name: { type: String, required: true },
     address: { type: String },
     open_closed : { type: Boolean}
