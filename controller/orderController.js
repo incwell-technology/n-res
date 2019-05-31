@@ -2,8 +2,8 @@ const Order = require('../models/order')
 
 exports.create = async (req, res) => {
     const order = new Order({
-        food = req.body.food,
-        quantity = req.body.quantity
+        food : req.body.food,
+        quantity : req.body.quantity
     })
     await order.save()
 }
@@ -17,4 +17,4 @@ exports.show = async (req, res) => {
     catch (err) {
         console.log(err)
     }
-} 
+}
