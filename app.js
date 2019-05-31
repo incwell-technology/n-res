@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const register = require('./routes/restaurantRegister')
 dotenv.config({
     path: './config/.env'
 })
@@ -16,3 +17,4 @@ app.listen(PORT, () =>
 
 app.use(bodyParser.json())
 app.use(cors())
+app.use('/', register)
