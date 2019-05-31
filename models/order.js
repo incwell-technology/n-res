@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const schema = mongoose.Schema({
-    food: { type: String, ref = 'foods' },
+    food: { type: String, ref : 'foods' },
     quantity: { type: Number },
     status: { type: String }
 })
