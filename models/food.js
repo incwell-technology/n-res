@@ -4,6 +4,9 @@ const schema = mongoose.Schema({
     category: [
         { type: Schema.Types.ObjectId, ref: 'Category' }
     ],
+    restaurant: [
+        { type: Schema.Types.ObjectId, ref: 'Restaurant' }
+    ],
     price: { type: Number },
     picture: { type: String },
     description: { type: String, required: true }
