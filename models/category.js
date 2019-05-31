@@ -4,4 +4,4 @@ const schema = mongoose.Schema({
     picture: { type: String },
     description : {type:String, required: true}
 })
-module.exports = mongoose.model("Category", schema)
+module.exports = mongoose.model("categories", schema)
