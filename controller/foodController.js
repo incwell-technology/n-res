@@ -1,0 +1,12 @@
+const Food = require('../models/food')
+
+exports.create = async (req, res) => {
+    const food = new Food({
+        food_name = req.body.food_name,
+        category = req.body.catergory,
+        restaurant = req.body.restaurant,
+        price =req.body.price,
+        description = req.body.description
+    })
+    await food.save()
+}
