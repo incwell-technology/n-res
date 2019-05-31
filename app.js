@@ -1,0 +1,18 @@
+const express = require('express')
+const app = express()
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+const cors = require('cors')
+dotenv.config({
+    path: './config/.env'
+})
+
+const PORT = process.env.PORT || 3000
+mongoose.connect('mongodb://localhost/Resturant', { useNewUrlParser: true })
+app.listen(PORT, () =>
+    console.log('Hello Resturant'),
+)
+
+app.use(bodyParser.json())
+app.use(cors())
