@@ -9,7 +9,7 @@ dotenv.config({
 })
 
 const PORT = process.env.PORT || 3000
-mongoose.connect('mongodb://localhost/Resturant', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/Restaurant', { useNewUrlParser: true })
 app.listen(PORT, () =>
     console.log('Hello Restaurant'),
 )
