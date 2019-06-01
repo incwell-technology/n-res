@@ -4,15 +4,18 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const orderRoute = require('./routes/ownerOrdersRoute')
 dotenv.config({
     path: './config/.env'
 })
 
 const PORT = process.env.PORT || 3000
-mongoose.connect('mongodb://localhost/Restaurant', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/restaurant', { useNewUrlParser: true })
 app.listen(PORT, () =>
     console.log('Hello Restaurant'),
 )
 
 app.use(bodyParser.json())
 app.use(cors())
+
+app.use('/v1/', orderRoute)
