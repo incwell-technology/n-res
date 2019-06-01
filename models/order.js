@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema({
     food: { type: String, ref : "foods" },
     quantity: { type: Number },
-    status: { type: String }
+    status: { type: String },
+    token: { type: String }
 })
 module.exports = mongoose.model("orders", schema)
