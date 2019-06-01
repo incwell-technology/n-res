@@ -2,21 +2,27 @@ const Order = require('../models/order')
 const Food = require("../models/food");
 const Category = require("../models/category");
 const Restaurant = require("../models/restaurant");
+let admin = require('firebase-admin');
+
+
 exports.create = async (req, res) => {
     try {
         const orderArray = req.body.orders;
+        let payload = []
         for (let i = 0; i < orderArray.length; i++) {
             const order = new Order({
                 food: orderArray[i].food,
                 status: "cooking",
-                quantity: orderArray[i].quantity
+                quantity: orderArray[i].quantity,
+                token: orderArray[i].token
             })
             await order.save()
-            res.status(201).json({
-                "success": true,
-                "payload": order
-            })
+            await payload.push(order)
         }
+        res.status(201).json({
+            "success": true,
+            "payload": payload
+        })
     }
     catch (err) {
         console.log(err)
