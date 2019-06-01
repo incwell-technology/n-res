@@ -7,4 +7,5 @@ exports.create = async (req, res) => {
         description : req.body.description
     })
     await category.save()
+    res.send("Ok")
 }

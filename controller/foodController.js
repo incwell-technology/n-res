@@ -10,4 +10,6 @@ exports.create = async (req, res) => {
         description: req.body.description
     })
     await food.save()
+    res.send("OK")
+
 }

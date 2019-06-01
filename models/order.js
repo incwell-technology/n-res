@@ -3,4 +3,4 @@ const schema = mongoose.Schema({
     food: { type: String },
     quantity: { type: Number }
 })
-module.exports = mongoose.model("Order", schema)
+module.exports = mongoose.model("orders", schema)

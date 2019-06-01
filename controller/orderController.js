@@ -6,6 +6,7 @@ exports.create = async (req, res) => {
         quantity : req.body.quantity
     })
     await order.save()
+    res.json('Ok')
 }
 
 exports.show = async (req, res) => {
